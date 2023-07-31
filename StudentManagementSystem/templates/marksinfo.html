@@ -1,0 +1,34 @@
+{% load static %}
+<HTML DOCTYPE!>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Marks Info</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{% static 'marksinfostyle.css' %}">
+    </head>
+    <body>
+        <div id="marksinfo">
+            <div class="container">
+                <h1 class="subtitle1">Marks Form</h1>
+                <p class="subtitle2">Enter your mark details</p>
+                <div class="details">
+                    <form method = "POST" action={% url 'marksinfo' %}>
+                        {% csrf_token %}
+                    
+                        Registration Number<input type="text" name="Reg_no" placeholder="Your Registration Number" required> <br>
+                        Subject<input type="text" name="Subject" placeholder="Enter subject name" required> <br>
+                        Marks<input type="text" name="marks" placeholder="Enter your marks" required><br>
+                        Semester<input type="text" name="Semester" placeholder="Enter your semester " required><br>
+                        Year<input type="text" name="year" placeholder="Enter year" required> <br>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+            </div>
+        </div>
+    
+        
+        <script src="" async defer></script>
+    </body>
+</html>

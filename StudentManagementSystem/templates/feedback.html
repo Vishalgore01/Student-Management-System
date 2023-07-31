@@ -1,0 +1,33 @@
+{% load static %}
+<HTML DOCTYPE!>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Feedback</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{% static 'feedbackstyle.css' %}">
+    </head>
+    <body>
+        <div id="feedback">
+            <div class="container">
+                <h1 class="subtitle1">Feedback Form</h1>
+                <p class="subtitle2">Enter your Feedback</p>
+                <div class="details">
+                    <form method = "POST" action={% url 'feedback' %}>
+                        {% csrf_token %}
+                    
+                        Registration Number<input type="text" name="Reg_no" placeholder="Enter your Registration Number" required> <br>
+                        Date<input type="date" name="date" ><br>
+                        Subject<input type="text" name="subject" placeholder="Enter your marks" required><br>
+                        Feedback<textarea name="feedback" rows="6" placeholder="Enter your Feedback " required></textarea><br>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+            </div>
+        </div>
+    
+        
+        <script src="" async defer></script>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+{% load static %}
+<HTML DOCTYPE!>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Student Info</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{% static 'studentinfostyle.css' %}">
+    </head>
+    <body>
+        <div id="studentinfo">
+            <div class="container">
+                <h1 class="subtitle1">Student Information Form</h1>
+                <p class="subtitle2">Enter Student Details</p>
+                <div class="details">
+                    <form method = "POST" action={% url 'studentinfo' %}>
+                        {% csrf_token %}
+                    
+                        Full Name<input type="text" name="Student_Name" placeholder="Your Name" required> <br>
+                        Registration Number<input type="text" name="Reg_no" placeholder="Your Registration Number" required> <br>
+                        Address<input type="text" name="Address" placeholder="Your Address" required><br>
+                        Taluka<input type="text" name="Taluka" placeholder="Your Taluka " required><br>
+                        District<input type="text" name="District" placeholder="Your District" required> <br>
+                        State<input type="text" name="State" placeholder="Your State" required><br>
+                        Pincode<input type="text" name="pincode" placeholder="Enter Pincode" required><br>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    
+                    </form>
+            </div>
+        </div>
+    
+        
+        <script src="" async defer></script>
+    </body>
+</html>

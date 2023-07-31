@@ -1,0 +1,36 @@
+{% load static %}
+<HTML DOCTYPE!>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Admission Info</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{% static 'admissioninfostyle.css' %}">
+    </head>
+    <body>
+        <div id="studentinfo">
+            <div class="container">
+                <h1 class="subtitle1">Admission Form</h1>
+                <p class="subtitle2">Enter Admission Details</p>
+                <div class="details">
+                    <form method = "POST" action={% url 'admissioninfo' %}>
+                        {% csrf_token %}
+                    
+                        Registration Number<input type="text" name="Reg_no" placeholder="Enter your registration number" required> <br>
+                        Student Name<input type="text" name="S_name" placeholder="Enter your name" required> <br>
+                        Class<input type="text" name="Class_name" placeholder="Enter your class name" required><br>
+                        Branch<input type="text" name="Branch" placeholder="Enter your branch Name " required><br>
+                        Year<input type="text" name="year" placeholder="Enter year in which your studing" required> <br>
+                        Date of Admission<input type="date" name="Date_of_Admission" ><br>
+                        Semester<input type="text" name="Semester" placeholder="Enter in which semester you are studing" required><br>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form> 
+            </div>
+        </div>
+    
+        
+        <script src="" async defer></script>
+    </body>
+</html>
